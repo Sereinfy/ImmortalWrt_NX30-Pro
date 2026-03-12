@@ -9,12 +9,34 @@
 #============================================================
 
 # Modify default IP
+rm -rf ./feeds/extraipk/theme/luci-theme-argon-18.06
+rm -rf ./feeds/extraipk/theme/luci-app-argon-config-18.06
+rm -rf ./feeds/extraipk/theme/luci-theme-design
+rm -rf ./feeds/extraipk/theme/luci-theme-edge
+rm -rf ./feeds/extraipk/theme/luci-theme-ifit
+rm -rf ./feeds/extraipk/theme/luci-theme-opentopd
+rm -rf ./feeds/extraipk/theme/luci-theme-neobird
+
+rm -rf ./package/feeds/extraipk/luci-theme-argon-18.06
+rm -rf ./package/feeds/extraipk/luci-app-argon-config-18.06
+rm -rf ./package/feeds/extraipk/theme/luci-theme-design
+rm -rf ./package/feeds/extraipk/theme/luci-theme-edge
+rm -rf ./package/feeds/extraipk/theme/luci-theme-ifit
+rm -rf ./package/feeds/extraipk/theme/luci-theme-opentopd
+rm -rf ./package/feeds/extraipk/theme/luci-theme-neobird
 
 # 默认网关 ip 地址修改
 sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate
 #sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/luci2/bin/config_generate
 
 #sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-default-settings
+
+
+##取消bootstrap为默认主题
+sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap
+sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
+sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci-nginx/Makefile
+
 
 ## golang 为 1.24.x
 rm -rf feeds/packages/lang/golang
