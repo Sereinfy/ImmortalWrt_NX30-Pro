@@ -33,8 +33,11 @@ rm -rf package/feeds/luci/luci-app-openclash
 rm -rf feeds/luci/applications/luci-app-openclash
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
-git clone --depth=1 -b dev https://github.com/vernesong/OpenClash package/luci-app-openclash
+#git clone --depth=1 -b dev https://github.com/vernesong/OpenClash package/luci-app-openclash
 
-git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
-rm -rf feeds/luci/themes/luci-theme-argon/*
-cp -af package/luci-theme-argon/*  feeds/luci/themes/luci-theme-argon/
+#git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
+#rm -rf feeds/luci/themes/luci-theme-argon/*
+#cp -af package/luci-theme-argon/*  feeds/luci/themes/luci-theme-argon/
+
+rm -rfv feeds/luci/themes/luci-theme-argon
+git clone https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
