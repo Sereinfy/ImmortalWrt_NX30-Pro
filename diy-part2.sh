@@ -31,6 +31,7 @@ rm -rf package/feeds/packages/v2ray-geodata
 find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 find ./ | grep Makefile | grep mosdns | xargs rm -f
 find ./ | grep Makefile | grep argon | xargs rm -f
+
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
-#git clone https://github.com/xiangfeidexiaohuo/extra-ipk/tree/master/theme/luci-theme-argon package/luci-theme-argon
+git clone https://github.com/xiangfeidexiaohuo/extra-ipk/tree/master/theme/luci-theme-argon package/luci-theme-argon
