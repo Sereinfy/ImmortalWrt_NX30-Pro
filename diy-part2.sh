@@ -33,3 +33,10 @@ find ./ | grep Makefile | grep mosdns | xargs rm -f
 
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
+
+# 删除 feeds 自带 argon
+rm -rf feeds/luci/themes/luci-theme-argon
+
+git clone --depth 1 --branch v2.3.2 \
+https://github.com/jerrykuku/luci-theme-argon.git \
+package/luci-theme-argon
